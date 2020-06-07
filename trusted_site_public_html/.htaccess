@@ -1,0 +1,7 @@
+<IfModule mod_setenvif.c>
+    <IfModule mod_headers.c>
+        <FilesMatch "\.(cur|gif|ico|jpe?g|png|svgz?|webp)$">
+            Header set Access-Control-Allow-Origin "http://trustedsite.com"
+        </FilesMatch>
+    </IfModule>
+</IfModule>

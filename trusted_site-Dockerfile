@@ -1,0 +1,5 @@
+FROM httpd:2.4
+COPY ./trusted_site_public_html/ /usr/local/apache2/htdocs/
+
+# We should allow the .htaccess rules to take effect
+RUN sed -i 's/AllowOverride None/AllowOverride All/g' ./conf/httpd.conf

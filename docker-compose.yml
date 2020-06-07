@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+    trusted_app:
+        container_name: trusted_site_app
+        image: trusted_site_img
+        build:
+            context: .
+            dockerfile: ./trusted_site-Dockerfile
+        ports:
+            - "8080:80"
+        networks:
+            cors_hack_net:
+              ipv4_address: 10.5.0.2
+
+    evil_app:
+        container_name: evil_site_app
+        image: evil_site_img
+        build:
+            context: .
+            dockerfile: ./evil_site-Dockerfile
+        ports:
+            - "8081:80"
+        networks:
+            cors_hack_net:
+              ipv4_address: 10.5.0.3
+
+networks:
+    cors_hack_net:
+        driver: bridge
+        ipam:
+          config:
+          - subnet: 10.5.0.0/16

@@ -1,0 +1,22 @@
+<html>
+ <head>
+   <title> CORS-protected web server </title>
+ </head>
+ <body>
+   <div>
+     <img></img>
+   </div>
+   <script>
+      var myImage = document.querySelector('img');
+
+      fetch('owasp_bug.png')
+      .then(function(response) {
+        return response.blob();
+      })
+      .then(function(myBlob) {
+        var objectURL = URL.createObjectURL(myBlob);
+        myImage.src = objectURL;
+      });
+   </script>
+ </body>
+</html>
