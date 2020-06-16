@@ -1,7 +1,9 @@
 <IfModule mod_setenvif.c>
     <IfModule mod_headers.c>
         <FilesMatch "\.(cur|gif|ico|jpe?g|png|svgz?|webp)$">
-            Header set Access-Control-Allow-Origin "http://trustedsite.com"
+            SetEnvIf Origin "http(s)?://(www\.)?(trustedsite.com|another.domain.com)$" AccessControlAllowOrigin=$0
+            Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
+            Header merge Vary Origin
         </FilesMatch>
     </IfModule>
 </IfModule>
