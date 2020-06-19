@@ -1,22 +1,16 @@
 <html>
  <head>
-   <title> Evil Hacker Web Server (NO-BYPASS) </title>
+   <meta charset="UTF-8">
+   <title> Evil Hacker Web Server</title>
  </head>
  <body>
-   <div>
-     <img></img>
-   </div>
-   <script>
-      var myImage = document.querySelector('img');
-
-      fetch('http://trustedsite.com/owasp_bug.png')
-      .then(function(response) {
-        return response.blob();
-      })
-      .then(function(myBlob) {
-        var objectURL = URL.createObjectURL(myBlob);
-        myImage.src = objectURL;
-      });
-   </script>
+   <h1>Evil Hacker Web Server INDEX</h1>
+   <ul>
+    <li><a href="no_bypass.html" rel="noopener noreferrer" target="_blank">NO BYPASS via FETCH</a></li>
+    <li><a href="bypass_img_fetch.html" rel="noopener noreferrer" target="_blank">CORS image bypassing via FETCH</a></li>
+    <li><a href="bypass_img_xhr.html" rel="noopener noreferrer" target="_blank">CORS image bypassing via XHR</a></li>
+    <li><a href="bypass_script_fetch.html" rel="noopener noreferrer" target="_blank">CORS script bypassing via FETCH</a></li>
+    <li><a href="bypass_script_xhr.html" rel="noopener noreferrer" target="_blank">CORS script bypassing via XHR</a></li>
+   </ul>
  </body>
 </html>

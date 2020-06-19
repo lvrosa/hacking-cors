@@ -1,14 +1,21 @@
 <html>
  <head>
-   <title> Evil Hacker Web Server (CORS BYPASS USING XHR)</title>
+   <meta charset="UTF-8">
+   <title> Evil Hacker Web Server (CORS IMG BYPASS USING XHR)</title>
  </head>
  <body>
    <div>
+     <canvas id="myCanvas" width="400" height="400" style="border:1px solid #000000;">
+     </canvas>
      <script>
+        var canvas = document.querySelector('canvas');
         var xhr = new XMLHttpRequest();
 
-        xhr.open('GET', 'https://cors-anywhere.herokuapp.com/http://trustedsite.com/owasp_bug.png', true);
+        xhr.open('POST', 'http://trustedsite.com/owasp_bug.png', true);
         xhr.responseType = 'blob';
+
+        // If the line below is set, we get the error:
+        // Attempt to set a forbidden header was denied: Origin
         // xhr.setRequestHeader('Origin','http://trustedsite.com');
 
         let data = {
@@ -18,11 +25,11 @@
         };
 
         xhr.onload = function(e) {
-          var url = URL.createObjectURL(this.response); // ! URL may need prefix
+          var url = URL.createObjectURL(this.response);
           var img = new Image();
 
           img.onload = function() {
-              URL.revokeObjectURL(this.src);            // auto-revoke can be set in some browsers
+              URL.revokeObjectURL(this.src);
               var ctx = canvas.getContext('2d');
               ctx.drawImage(this, 0, 0, canvas.width, canvas.height)
           };

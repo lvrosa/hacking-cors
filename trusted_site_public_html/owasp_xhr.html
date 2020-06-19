@@ -1,0 +1,33 @@
+<html>
+ <head>
+   <meta charset="UTF-8">
+   <title> CORS-protected web server </title>
+ </head>
+ <body>
+   <div>
+     <canvas id="myCanvas" width="400" height="400" style="border:1px solid #000000;">
+     </canvas>
+     <script>
+        var canvas = document.querySelector('canvas');
+        var xhr = new XMLHttpRequest();
+
+       xhr.open("GET", "http://trustedsite.com/owasp_bug.png", true);
+       xhr.responseType = 'blob';
+
+       xhr.onload = function(e) {
+         var url = URL.createObjectURL(this.response); // ! URL may need prefix
+         var img = new Image();
+
+         img.onload = function() {
+             URL.revokeObjectURL(this.src);            // auto-revoke can be set in some browsers
+             var ctx = canvas.getContext('2d');
+             ctx.drawImage(this, 0, 0, canvas.width, canvas.height)
+         };
+
+         img.src = url;
+       };
+       xhr.send();
+     </script>
+   </div>
+ </body>
+</html>

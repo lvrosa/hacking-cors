@@ -1,22 +1,13 @@
 <html>
  <head>
-   <title> CORS-protected web server </title>
+   <meta charset="UTF-8">
+   <title>Trusted Web Server</title>
  </head>
  <body>
-   <div>
-     <img></img>
-   </div>
-   <script>
-      var myImage = document.querySelector('img');
-
-      fetch('http://trustedsite.com/owasp_bug.png')
-      .then(function(response) {
-        return response.blob();
-      })
-      .then(function(myBlob) {
-        var objectURL = URL.createObjectURL(myBlob);
-        myImage.src = objectURL;
-      });
-   </script>
+   <h1>Trusted Web Server INDEX</h1>
+   <ul>
+    <li><a href="owasp_fetch.html" rel="noopener noreferrer" target="_blank">OWASP image via FETCH</a></li>
+    <li><a href="owasp_xhr.html" rel="noopener noreferrer" target="_blank">OWASP image via XHR</a></li>
+  </ul>
  </body>
 </html>
