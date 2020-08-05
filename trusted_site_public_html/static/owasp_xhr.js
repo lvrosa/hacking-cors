@@ -1,5 +1,5 @@
 function load_xhr() {
-  var myImage = document.querySelector('#main-content').querySelector('img')
+  var myImage = document.querySelector('#main-content').querySelector('img');
   myImage.style.display = "none";
 
   var canvas = document.querySelector('canvas');
