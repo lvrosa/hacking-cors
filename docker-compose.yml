@@ -2,7 +2,7 @@ version: '3'
 
 services:
     trusted_app:
-        container_name: trusted_site_app
+        container_name: trusted_site
         image: trusted_site_img
         build:
             context: .
@@ -14,7 +14,7 @@ services:
               ipv4_address: 10.5.0.2
 
     evil_app:
-        container_name: evil_site_app
+        container_name: evil_site
         image: evil_site_img
         build:
             context: .
@@ -24,6 +24,18 @@ services:
         networks:
             cors_hack_net:
               ipv4_address: 10.5.0.3
+
+    cors_anywhere_app:
+        container_name: cors_anywhere
+        image: cors_anywhere_img
+        build:
+            context: .
+            dockerfile: ./cors_anywhere-Dockerfile
+        ports:
+            - "8082:8080"
+        networks:
+            cors_hack_net:
+              ipv4_address: 10.5.0.4
 
 networks:
     cors_hack_net:
