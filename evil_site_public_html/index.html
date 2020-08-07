@@ -10,19 +10,54 @@
    <script type="text/javascript" src="static/bypass_img_via_proxy_xhr.js"></script>
    <script type="text/javascript" src="static/bypass_script_via_proxy_fetch.js"></script>
  </head>
+ <style>
+    table, th, td {
+      border: 1px solid black;
+    }
+ </style>
  <body>
    <div id="main" style="text-align:center; align-items: center;">
      <div id="title">
        <img src="img/logo.png"></img>
      </div>
-     <ul>
-       <li><a href="javascript:load_owasp_via_fetch()">OWASP image loading via FETCH</a></li>
-       <li><a href="javascript:load_owasp_via_xhr()">OWASP image loading via XHR</a></li>
-       <li><a href="javascript:load_script_via_fetch()">Alert script loading via FETCH</a></li>
-       <li><a href="javascript:load_script_via_xhr()">Alert script loading via XHR</a></li>
-       <li><a href="javascript:bypass_img_via_proxy_xhr()">BYPASS: OWASP image loading via XHR + Proxy</a></li>
-       <li><a href="javascript:bypass_script_via_proxy_fetch()">BYPASS: Alert script loading via FETCH + Proxy</a></li>
-     </ul>
+     <p><p><p>
+     <table style="width:65%">
+       <tr>
+         <th>Resource</th>
+         <th>Method</th>
+         <th>Bypassable?</th>
+       </tr>
+       <tr>
+         <td><a href="javascript:load_owasp_via_fetch()">OWASP image</a></td>
+         <td>JavaScript FETCH</td>
+         <td style="background-color:red">NO</td>
+       </tr>
+       <tr>
+         <td><a href="javascript:load_owasp_via_xhr()">OWASP image</a></td>
+         <td>JavaScript XHR</td>
+         <td style="background-color:red">NO</td>
+       </tr>
+       <tr>
+        <td><a href="javascript:load_script_via_fetch()">Alert script</a></td>
+        <td>JavaScript FETCH</td>
+        <td style="background-color:red">NO</td>
+       </tr>
+       <tr>
+         <td><a href="javascript:load_script_via_xhr()">Alert script</a></td>
+         <td>JavaScript XHR</td>
+         <td style="background-color:red">NO</td>
+       </tr>
+       <tr>
+         <td><a href="javascript:bypass_img_via_proxy_xhr()">OWASP image</a></td>
+         <td>JavaScript XHR + Proxy</td>
+         <td style="background-color:green">YES</td>
+       </tr>
+       <tr>
+         <td><a href="javascript:bypass_script_via_proxy_fetch()">Alert script</a></td>
+         <td>JavasScript FETCH + Proxy</td>
+         <td style="background-color:green">YES</td>
+       </tr>
+     </table>
 
     <p><p><p>
     <div id="main-content">
