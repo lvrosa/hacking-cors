@@ -25,18 +25,6 @@ services:
             cors_hack_net:
               ipv4_address: 10.5.0.3
 
-    cors_anywhere_app:
-        container_name: cors_anywhere
-        image: cors_anywhere_img
-        build:
-            context: .
-            dockerfile: ./cors_anywhere-Dockerfile
-        ports:
-            - "8082:8080"
-        networks:
-            cors_hack_net:
-              ipv4_address: 10.5.0.4
-
 networks:
     cors_hack_net:
         driver: bridge

@@ -7,8 +7,6 @@
    <script type="text/javascript" src="static/owasp_xhr.js"></script>
    <script type="text/javascript" src="static/script_fetch.js"></script>
    <script type="text/javascript" src="static/script_xhr.js"></script>
-   <script type="text/javascript" src="static/bypass_img_via_proxy_xhr.js"></script>
-   <script type="text/javascript" src="static/bypass_script_via_proxy_fetch.js"></script>
  </head>
  <style>
     table, th, td {
@@ -21,41 +19,26 @@
        <img src="img/logo.png"></img>
      </div>
      <p><p><p>
-     <table style="width:65%">
+     <table style="width:717px; text-align:center; margin-left:auto; margin-right:auto;">
        <tr>
          <th>Resource</th>
          <th>Method</th>
-         <th>Bypassable?</th>
        </tr>
        <tr>
          <td><a href="javascript:load_owasp_via_fetch()">OWASP image</a></td>
-         <td>JavaScript FETCH</td>
-         <td style="background-color:red">NO</td>
+         <td style="background-color:orange">JavaScript FETCH</td>
        </tr>
        <tr>
          <td><a href="javascript:load_owasp_via_xhr()">OWASP image</a></td>
-         <td>JavaScript XHR</td>
-         <td style="background-color:red">NO</td>
+          <td style="background-color:green">JavaScript XHR</td>
        </tr>
        <tr>
         <td><a href="javascript:load_script_via_fetch()">Alert script</a></td>
-        <td>JavaScript FETCH</td>
-        <td style="background-color:red">NO</td>
+        <td style="background-color:orange">JavaScript FETCH</td>
        </tr>
        <tr>
          <td><a href="javascript:load_script_via_xhr()">Alert script</a></td>
-         <td>JavaScript XHR</td>
-         <td style="background-color:red">NO</td>
-       </tr>
-       <tr>
-         <td><a href="javascript:bypass_img_via_proxy_xhr()">OWASP image</a></td>
-         <td>JavaScript XHR + Proxy</td>
-         <td style="background-color:green">YES</td>
-       </tr>
-       <tr>
-         <td><a href="javascript:bypass_script_via_proxy_fetch()">Alert script</a></td>
-         <td>JavasScript FETCH + Proxy</td>
-         <td style="background-color:green">YES</td>
+          <td style="background-color:green">JavaScript XHR</td>
        </tr>
      </table>
 

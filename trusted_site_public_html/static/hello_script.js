@@ -1,1 +1,1 @@
-alert(1);
+alert('All your base belong to us ;D');
