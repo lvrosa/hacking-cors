@@ -1,6 +1,6 @@
 FROM httpd:2.4
-COPY ./trusted_site_public_html/ /usr/local/apache2/htdocs/
+COPY ./trusted_site_public_html/ ./htdocs/
 
 # We should allow the .htaccess rules to take effect
 RUN sed -i 's/AllowOverride None/AllowOverride All/g' ./conf/httpd.conf
-RUN sed -i '1 i\ServerName localhost' /usr/local/apache2/conf/httpd.conf
+RUN sed -i '1 i\ServerName localhost' ./conf/httpd.conf

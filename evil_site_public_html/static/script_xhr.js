@@ -1,25 +1,13 @@
 function load_script_via_xhr() {
-  var myImage = document.querySelector('#main-content').querySelector('img');
-  myImage.style.display = "none";
-
-  var canvas = document.querySelector('canvas');
-  canvas.style.display = "inline";
-
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "http://trustedsite.com/static/hello_script.js", true);
-  xhr.responseType = 'blob';
 
-  xhr.onload = function(e) {
-   var url = URL.createObjectURL(this.response);
-   var img = new Image();
-
-   img.onload = function() {
-       URL.revokeObjectURL(this.src);
-       var ctx = canvas.getContext('2d');
-       ctx.drawImage(this, 0, 0, canvas.width, canvas.height)
-   };
-
-   img.src = url;
+  xhr.onreadystatechange = function()
+  {
+    if ((xhr.status == 200) && (xhr.readyState == 4))
+    {
+      eval(xhr.responseText);
+    }
   };
 
   let data = {
