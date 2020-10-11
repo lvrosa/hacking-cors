@@ -1,0 +1,33 @@
+{
+  "name": "hacking-cors",
+  "version": "1.0.0",
+  "description": "Understanding HTTP CORS from inside out",
+  "main": "index.js",
+  "dependencies": {
+    "http": "^0.0.1-security",
+    "http-proxy": "^1.18.1",
+    "require": "^2.4.20",
+    "url": "^0.11.0",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lvrosa/hacking-cors.git"
+  },
+  "author": "lvrosa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lvrosa/hacking-cors/issues"
+  },
+  "homepage": "https://github.com/lvrosa/hacking-cors#readme",
+  "keywords": [
+    "cors",
+    "hacking",
+    "bypass",
+    "http"
+  ]
+}
