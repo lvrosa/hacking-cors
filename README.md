@@ -1,5 +1,3 @@
-# hacking-cors
-
 Hacking HTTP CORS from inside out: a theory to practice approach
 ================================================================
 
