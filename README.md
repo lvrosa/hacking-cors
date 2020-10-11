@@ -1,44 +1,13 @@
 # hacking-cors
 
-Understanding HTTP CORS from inside out
+Hacking HTTP CORS from inside out: a theory to practice approach
+================================================================
 
-=> Foreword
+![evil-site-owasp-bug](assets/evil_site_owasp_bug.png?raw=true "Hacking CORS")
 
-  Hi, there. If you ever wonder about the CORS (Cross Origin Resource Sharing) inner workings. Or if you've never heard about it before, but feel it as a important web application concept to know. In either case, you are in the right place.
+This project has been bourne to be just a proof of concept. However, I've thought it would be didatic to write down a tour from theory to practice about HTTP CORS. So the current `hacking-cors` project provides the Docker-based containerized environment to put the hands-on.
 
-  In the next sections, we will dive into how browsers and servers handle CORS rules. By using a hands-on approach, I expect to throw you some light into how web resources should be securely configured in order to be trusted.
+Please, refer to the long breath article from my Medium to benefit the most from the files available here:
 
-=> HTTP CORS Fundamentals
+https://medium.com/@lvrosa/hacking-http-cors-from-inside-out-a-theory-to-practice-approach-512cb125c528
 
-
-
-=> The docker-based proposed scenario
-
-=> Understanding the CORS rules for XHR requests
-
-1) Requisição para recurso protegido por CORS via XHR (XmlHttpRequest)
-
-* Ao tentar adulterar o header origin via setRequestHeader(), o header original é preservado
-* Ao tentar adulterar o header via headers adicionais (passados como argumento ao xhr.send()), o header original é preservado
-
-=> Understanding the CORS rules for fetch requests
-
-* Ao tentar adulterar o header via campos adicionais (passados como argumento ao fetch()), o header original é preservado
-* Ao tentar adulterar o header pela edição de requests do browser, a regra de CORS ainda prevalece
-
-=> Bypassing CORS through proxy interception (Manual)
-
-=> Automatic bypassing? Meet the CORS Anywhwere project
-
-=> Concluding remarks
-
-Navegadores testados:
-
-Mozila Firefox 68.5
-Chromium 79
-Google Chrome (2018 old version) 70
-
-=> References
-
-[1] - https://medium.com/netscape/hacking-it-out-when-cors-wont-let-you-be-great-35f6206cc646
-[2] - https://cors-anywhere.herokuapp.com/
